@@ -1,0 +1,66 @@
+// write your code here
+var x = 3;
+var y = 5;
+var z=x*y+2;
+print(z);
+
+var img = new SimpleImage("dinos.png");
+// print(img);
+print(img.getWidth());
+print(img.getHeight());          // 1920*1080
+print(img.getRed(0,0));          //41
+print(img.getGreen(0,0));       //41
+print(img.getBlue(0,0));        //41
+
+//Write a function
+function square(x){
+    var ans = x*x;
+    return ans;
+}
+print(square(9));
+
+//Write another function
+function cube(x){
+    var ans = x*x*x;
+    return ans;
+}
+print(cube(5));
+
+var img = new SimpleImage(200,200);
+
+// Set each pixel to yellow
+for (var pixel of img.values()){
+    pixel.setRed(255);
+    pixel.setGreen(255);
+    pixel.setBlue(0);
+}
+print (img);
+
+// Three color bars
+var img1 = new SimpleImage("hilton.jpg");
+print(img1);
+for (var pixel of img1.values()){
+    if (pixel.getX()<=47){
+        pixel.setRed(255);
+    }    
+    else if(47<pixel.getX() && pixel.getX()<94){
+        pixel.setGreen(255);
+    }    
+    else {
+        pixel.setBlue(255);
+    }
+}
+print(img1);
+
+// change blue to yellow
+var img2 = new SimpleImage("duke_blue_devil.png");
+print(img2);
+for (var pixel of img2.values()){
+    if (pixel.getBlue() == 227){
+        pixel.setRed(255);
+        pixel.setGreen(255);
+        pixel.setBlue(0);
+    }
+}
+print(img2);
+
