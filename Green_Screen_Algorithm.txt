@@ -1,0 +1,20 @@
+// Green Screen Algorithm
+var frontimg = new SimpleImage("drewRobert.png");
+var backimg = new SimpleImage("dinos.png");
+var output = new SimpleImage(frontimg.getWidth(),frontimg.getHeight()); //black image
+
+for (var pixel of frontimg.values()){
+    var x = pixel.getX();
+    var y = pixel.getY(); // get coordinates
+    var backpixel = backimg.getPixel(x,y); // get pixel at (x,y)
+    if (pixel.getGreen() > pixel.getRed() + pixel.getBlue()){ //equivilent to > 240
+        
+        output.setPixel(x,y,backpixel);
+    }
+    else{
+        output.setPixel(x,y,pixel);
+    }
+}
+//print(frontimg);
+//print(backimg);
+print(output);
